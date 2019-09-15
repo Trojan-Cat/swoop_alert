@@ -1,28 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import Home from "./components/Home";
 import Map from "./components/Map";
 
 function App() {
   const [markers, setMarker] = useState([]);
-  // const [startLoc, setStartLoc] = useState({ lat: -34.397, lng: 150.644 });
+  const [startLoc, setStartLoc] = useState({ lat: -37.814, lng: 144.96332 });
 
   // Check if we can get the geolocation
-  if (navigator.geolocation) {
-    // 🗺️ yep, we can proceed!
-    navigator.geolocation.getCurrentPosition(displayLocationInfo);
-  } else {
-  }
+  // Using useEffect to only run once
+  useEffect(() => {
+    if (navigator.geolocation) {
+      // 🗺️ yep, we can proceed!
+      navigator.geolocation.getCurrentPosition(displayLocationInfo);
+    } else {
+    }
+  }, []);
 
   //Send question to user to ask if we can use their location for a starting location
   function displayLocationInfo(position) {
     const lng = position.coords.longitude;
     const lat = position.coords.latitude;
-    console.log("RAN");
-
     console.log(`longitude: ${lng} | latitude: ${lat}`);
-    //TODO: This loops and rerenders the component each time it is set, and sets it back to the start etc
-    //setStartLoc({ startLoc: { lat: lat, lng: lng } });
+    setStartLoc({ lat: lat, lng: lng });
   }
 
   const handleClickedMap = e => {
@@ -31,6 +31,12 @@ function App() {
 
     const marker = { latitude: latitude, longtitude: longtitude };
     setMarker([...markers, marker]);
+    setStartLoc({ lat: latitude, lng: longtitude });
+  };
+
+  //This is called when ever the vcenter is moved
+  const centerMoved = (mapProps, map) => {
+    // ...
   };
 
   return (
@@ -43,8 +49,9 @@ function App() {
         loadingElement={<div style={{ height: `100%` }} />}
         containerElement={<div style={{ height: `70vh` }} />}
         mapElement={<div style={{ height: `100%` }} />}
-        // startLoc={startLoc}
         markers={markers}
+        startLoc={startLoc}
+        centerMoved={centerMoved}
       />
     </div>
   );
