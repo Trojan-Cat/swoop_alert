@@ -1,3 +1,18 @@
+# Swoop Alert
+
+This project was set up and made to allow people to record locations of bird attacks from the Australian bird called a Magpie.
+
+##TODO:
+
+- [x] Added in Google maps
+- [ ] Have the ability to place a new marker
+- [ ] Loads up Mongo DB marker
+- [ ] Heat map
+- [ ] New Markers recorded to Mongo DB
+- [ ] CSS Theme
+- [ ] Search option for people to enter in address to get to location
+- [ ] Example site hosted on netlfiy
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

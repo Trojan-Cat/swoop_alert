@@ -21,7 +21,6 @@ function App() {
   function displayLocationInfo(position) {
     const lng = position.coords.longitude;
     const lat = position.coords.latitude;
-    console.log(`longitude: ${lng} | latitude: ${lat}`);
     setStartLoc({ lat: lat, lng: lng });
   }
 
@@ -32,11 +31,6 @@ function App() {
     const marker = { latitude: latitude, longtitude: longtitude };
     setMarker([...markers, marker]);
     setStartLoc({ lat: latitude, lng: longtitude });
-  };
-
-  //This is called when ever the vcenter is moved
-  const centerMoved = (mapProps, map) => {
-    // ...
   };
 
   return (
@@ -51,12 +45,9 @@ function App() {
         mapElement={<div style={{ height: `100%` }} />}
         markers={markers}
         startLoc={startLoc}
-        centerMoved={centerMoved}
       />
     </div>
   );
 }
 
 export default App;
-
-//defaultCenter = {{ lat: -34.397, lng: 150.644 }}

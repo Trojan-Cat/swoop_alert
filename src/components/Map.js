@@ -17,7 +17,6 @@ const Map = withScriptjs(
         lat: props.startLoc.lat,
         lng: props.startLoc.lng
       }}
-      onDragend={props.centerMoved}
       onClick={props.handleClickedMap}
     >
       <MarkerClusterer averageCenter enableRetinaIcons gridSize={15}>
@@ -36,6 +35,8 @@ const Map = withScriptjs(
 );
 
 export default Map;
+
+// onBoundsChanged
 
 //defaultCenter = {{ lat: -34.397, lng: 150.644 }}
 /*
