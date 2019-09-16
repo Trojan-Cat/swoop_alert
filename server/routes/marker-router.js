@@ -8,6 +8,6 @@ router.post('/marker', MarkerCtrl.createMarker)
 router.put('/marker/:id', MarkerCtrl.updateMarker)
 router.delete('/marker/:id', MarkerCtrl.deleteMarker)
 router.get('/marker/:id', MarkerCtrl.getMarkerById)
-router.get('/marker', MarkerCtrl.getMarker)
+router.get('/markers', MarkerCtrl.getMarker)
 
 module.exports = router
