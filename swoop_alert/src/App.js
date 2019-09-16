@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
+
+
 import Home from "./components/Home";
 import Map from "./components/Map";
+import MarkerForm from "./components/MarkerForm"
 
 function App() {
   const [markers, setMarker] = useState([]);
@@ -46,6 +49,7 @@ function App() {
         markers={markers}
         startLoc={startLoc}
       />
+      <MarkerForm />
     </div>
   );
 }
