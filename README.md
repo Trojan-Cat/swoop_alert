@@ -6,7 +6,10 @@ This project was set up and made to allow people to record locations of bird att
 
 - [x] Added in Google maps
 - [ ] Have the ability to place a new marker
-- [ ] Loads up Mongo DB marker
+- [x] MongoDB
+- [x] Express
+- [x] CRUD operations for Markers
+- [ ] Connected in Servercalls to react actions
 - [ ] Heat map
 - [ ] New Markers recorded to Mongo DB
 - [ ] CSS Theme
