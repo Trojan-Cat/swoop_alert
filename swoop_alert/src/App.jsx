@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 
-
 import Home from "./components/Home";
 import Map from "./components/Map";
-import MarkerForm from "./components/MarkerForm"
+import MarkerForm from "./components/MarkerForm";
 
 function App() {
   const [markers, setMarker] = useState([]);
@@ -20,18 +19,18 @@ function App() {
     }
   }, []);
 
-  //Send question to user to ask if we can use their location for a starting location
+  // Send question to user to ask if we can use their location for a starting location
   function displayLocationInfo(position) {
     const lng = position.coords.longitude;
     const lat = position.coords.latitude;
-    setStartLoc({ lat: lat, lng: lng });
+    setStartLoc({ lat, lng });
   }
 
   const handleClickedMap = e => {
-    let latitude = e.latLng.lat();
-    let longtitude = e.latLng.lng();
+    const latitude = e.latLng.lat();
+    const longtitude = e.latLng.lng();
 
-    const marker = { latitude: latitude, longtitude: longtitude };
+    const marker = { latitude, longtitude };
     setMarker([...markers, marker]);
     setStartLoc({ lat: latitude, lng: longtitude });
   };
