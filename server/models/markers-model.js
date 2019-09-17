@@ -1,12 +1,14 @@
-const mongoose = require('mongoose')
-const Schema = mongoose.Schema
+const mongoose = require("mongoose");
+
+const {Schema} = mongoose;
 
 const Marker = new Schema(
-    {
-        lat: { type: Number },
-        lng: { type: Number },
-    },
-    { timestamps: true }
-)
+  {
+    note: { type: String },
+    lat: { type: Number },
+    lng: { type: Number }
+  },
+  { timestamps: true }
+);
 
-module.exports = mongoose.model('users', Marker)
+module.exports = mongoose.model("users", Marker);

@@ -8,12 +8,8 @@ import MarkerForm from "./components/MarkerForm";
 import useMarkerForm from "./hooks/useMarkerForm";
 
 function App() {
-  const {
-    inputs,
-    handleInputChange,
-    handleClickedMap,
-    handleSubmit
-  } = useMarkerForm();
+  const { inputs, handleInputChange, handleSubmit } = useMarkerForm();
+  const [newMarker, setNewMarker] = useState({ latitude: 0, longtitude: 0 });
   const [markers, setMarker] = useState([]);
   const [startLoc, setStartLoc] = useState({ lat: -37.814, lng: 144.96332 });
 
@@ -34,18 +30,12 @@ function App() {
     setStartLoc({ lat, lng });
   }
 
-  // TODO: Move into custom hook
-  /*
   const handleClickedMap = e => {
     const latitude = e.latLng.lat();
     const longtitude = e.latLng.lng();
-
     const marker = { latitude, longtitude };
-    // setMarker([...markers, marker]);
     setNewMarker(marker);
-    setStartLoc({ lat: latitude, lng: longtitude });
   };
-  */
 
   return (
     <div className="App">
@@ -60,7 +50,7 @@ function App() {
         markers={markers}
         startLoc={startLoc}
       />
-      <MarkerForm />
+      <MarkerForm newMarker={newMarker} />
     </div>
   );
 }
