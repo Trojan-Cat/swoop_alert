@@ -1,7 +1,7 @@
 const Marker = require("../models/markers-model");
 
 createMarker = (req, res) => {
-  const {body} = req;
+  const { body } = req;
 
   if (!body) {
     return res.status(400).json({
@@ -34,7 +34,7 @@ createMarker = (req, res) => {
 };
 
 updateMarker = async (req, res) => {
-  const {body} = req;
+  const { body } = req;
 
   if (!body) {
     return res.status(400).json({

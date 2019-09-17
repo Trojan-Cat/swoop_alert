@@ -1,11 +1,19 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 
-import Home from "./components/Home";
+import Header from "./components/Header";
 import Map from "./components/Map";
 import MarkerForm from "./components/MarkerForm";
 
+import useMarkerForm from "./hooks/useMarkerForm";
+
 function App() {
+  const {
+    inputs,
+    handleInputChange,
+    handleClickedMap,
+    handleSubmit
+  } = useMarkerForm();
   const [markers, setMarker] = useState([]);
   const [startLoc, setStartLoc] = useState({ lat: -37.814, lng: 144.96332 });
 
@@ -26,18 +34,22 @@ function App() {
     setStartLoc({ lat, lng });
   }
 
+  // TODO: Move into custom hook
+  /*
   const handleClickedMap = e => {
     const latitude = e.latLng.lat();
     const longtitude = e.latLng.lng();
 
     const marker = { latitude, longtitude };
-    setMarker([...markers, marker]);
+    // setMarker([...markers, marker]);
+    setNewMarker(marker);
     setStartLoc({ lat: latitude, lng: longtitude });
   };
+  */
 
   return (
     <div className="App">
-      <Home />
+      <Header />
       <Map
         handleClickedMap={handleClickedMap}
         isMarkerShown
