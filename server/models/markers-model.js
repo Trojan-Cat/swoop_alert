@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const {Schema} = mongoose;
+const { Schema } = mongoose;
 
 const Marker = new Schema(
   {
@@ -11,4 +11,4 @@ const Marker = new Schema(
   { timestamps: true }
 );
 
-module.exports = mongoose.model("users", Marker);
+module.exports = mongoose.model("markers", Marker);

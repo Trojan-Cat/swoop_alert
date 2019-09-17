@@ -2,16 +2,19 @@
 
 This project was set up and made to allow people to record locations of bird attacks from the Australian bird called a Magpie.
 
-##TODO:
+## TODO:
 
 - [x] Added in Google maps
-- [ ] Have the ability to place a new marker
+- [x] Have the ability to place a new marker
 - [x] MongoDB
 - [x] Express
 - [x] CRUD operations for Markers
-- [ ] Connected in Servercalls to react actions
-- [ ] Heat map
-- [ ] New Markers recorded to Mongo DB
+- [x] Connect front end to back end to use calls
+- [ ] Map
+  - [x] Marker clusters
+  - [ ] Heat map
+  - [ ] Display note for marker
+  - [ ] Custom marker theme for a bird
 - [ ] CSS Theme
 - [ ] Search option for people to enter in address to get to location
 - [ ] Example site hosted on netlfiy

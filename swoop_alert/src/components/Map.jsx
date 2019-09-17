@@ -5,6 +5,7 @@ import {
   GoogleMap,
   Marker
 } from "react-google-maps";
+
 const {
   MarkerClusterer
 } = require("react-google-maps/lib/components/addons/MarkerClusterer");
@@ -38,7 +39,7 @@ export default Map;
 
 // onBoundsChanged
 
-//defaultCenter = {{ lat: -34.397, lng: 150.644 }}
+// defaultCenter = {{ lat: -34.397, lng: 150.644 }}
 /*
  defaultCenter={{
         lat: props.startLoc.lat,
