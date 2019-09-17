@@ -1,3 +1,5 @@
+/* global google */
+
 import React from "react";
 import {
   withScriptjs,
@@ -36,14 +38,3 @@ const Map = withScriptjs(
 );
 
 export default Map;
-
-// onBoundsChanged
-
-// defaultCenter = {{ lat: -34.397, lng: 150.644 }}
-/*
- defaultCenter={{
-        lat: props.startLoc.lat,
-        lng: props.startLoc.lng
-      }}
-
-      */

@@ -14,6 +14,7 @@ function App() {
   const [newMarker, setNewMarker] = useState({ latitude: 0, longtitude: 0 });
   const [markers, setMarker] = useState([]);
   const [startLoc, setStartLoc] = useState({ lat: -37.814, lng: 144.96332 });
+  const [toggleHeat, setToggleHeat] = useState(false);
 
   // Check if we can get the geolocation
   // Using useEffect to only run once
@@ -24,10 +25,9 @@ function App() {
       const response = await apis.getAllMarkers();
       if (!didCancel) {
         // Ignore if we started fetching something else
-        console.log(response.data.data);
+
         response.data.data.map(markerApi => {
           const marker = { latitude: markerApi.lat, longtitude: markerApi.lng };
-          console.log("Set marker called");
           setMarker(markers => [...markers, marker]);
         });
       }
@@ -61,6 +61,12 @@ function App() {
     // TODO: When it sets a new startLoc for the first time it goes back to the intial value set, after first click it is fine
   };
 
+  const handleClickedHeatMap = () => {
+    setToggleHeat(!toggleHeat);
+    console.log(toggleHeat);
+    // const heatmap = markers.map();
+  };
+
   return (
     <div className="App">
       <Header />
@@ -74,6 +80,9 @@ function App() {
         markers={markers}
         startLoc={startLoc}
       />
+      <button type="button" onClick={handleClickedHeatMap}>
+        Heat Map
+      </button>
       <MarkerForm newMarker={newMarker} />
     </div>
   );

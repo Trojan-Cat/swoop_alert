@@ -14,12 +14,11 @@ const MarkerForm = props => {
     // callback();
 
     if (latitude !== undefined) {
-      console.log("we got something here");
-      console.log(latitude);
       const marker = {
         note: inputs,
         lat: latitude,
-        lng: longtitude
+        lng: longtitude,
+        weight: 2
       };
       apis.insertMarker(marker);
     }

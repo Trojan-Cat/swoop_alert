@@ -15,8 +15,10 @@ This project was set up and made to allow people to record locations of bird att
   - [ ] Heat map
   - [ ] Display note for marker
   - [ ] Custom marker theme for a bird
+  - [ ] Search option for people to enter in address to go to location
 - [ ] CSS Theme
-- [ ] Search option for people to enter in address to get to location
+- [ ] Feed: Display feed with notes and locaton data
+- [ ] Option to search your area to find bird attacks near you
 - [ ] Example site hosted on netlfiy
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
