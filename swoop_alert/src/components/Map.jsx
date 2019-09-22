@@ -1,6 +1,6 @@
 /* global google */
 
-import React from "react";
+import React, { useState } from "react";
 import {
   withScriptjs,
   withGoogleMap,
@@ -18,10 +18,7 @@ const Map = withScriptjs(
   withGoogleMap(props => (
     <GoogleMap
       defaultZoom={12}
-      center={{
-        lat: props.startLoc.lat,
-        lng: props.startLoc.lng
-      }}
+      center={{ lat: props.startLoc.lat, lng: props.startLoc.lng }}
       onClick={props.handleClickedMap}
       heatmapLibrary
     >

@@ -16,9 +16,9 @@ function App() {
   const [newMarker, setNewMarker] = useState({ latitude: 0, longtitude: 0 });
   const [markers, setMarker] = useState([]);
   const [startLoc, setStartLoc] = useState({ lat: -37.814, lng: 144.96332 });
-  const [toggleHeat, setToggleHeat] = useState(false);
+  // const [toggleHeat, setToggleHeat] = useState(false);
 
-  // Check if we can get the geolocation
+  // Checks if we can get the geolocation
   // Using useEffect to only run once
   // Does an async call to get all the markers
   useEffect(() => {
@@ -36,10 +36,9 @@ function App() {
     }
 
     fetchMyAPI();
-
     if (navigator.geolocation) {
       // 🗺️ yep, we can proceed!
-
+      console.log("Called");
       navigator.geolocation.getCurrentPosition(displayLocationInfo);
     } else {
     }
@@ -61,7 +60,6 @@ function App() {
     // setMarker(markers => [...markers, marker]);
 
     setStartLoc({ latitude, longtitude });
-    // TODO:  Display a marker for the new marker before it has been submitted
     // TODO: When it sets a new startLoc for the first time it goes back to the intial value set, after first click it is fine
   };
 
