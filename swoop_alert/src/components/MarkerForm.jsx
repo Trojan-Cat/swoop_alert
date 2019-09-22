@@ -3,6 +3,8 @@ import React from "react";
 import useMarkerForm from "../hooks/useMarkerForm";
 import apis from "../api";
 
+import { Form, Button, Label, Input } from "../styles/MarkerForm";
+
 const MarkerForm = props => {
   // Deconstructing hooks methods of for the function
 
@@ -25,25 +27,25 @@ const MarkerForm = props => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
+    <Form onSubmit={handleSubmit}>
+      <Label>
         Latitude:
         {latitude}
-      </label>
+      </Label>
       <label>
         Longtitude:
         {longtitude}
       </label>
       <label>Adddress: </label>
       <label>Note</label>
-      <input
+      <Input
         type="text"
         value={inputs}
         name="note"
         onChange={handleInputChange}
       />
-      <button type="submit">Submit</button>
-    </form>
+      <Button type="submit">Submit</Button>
+    </Form>
   );
 };
 

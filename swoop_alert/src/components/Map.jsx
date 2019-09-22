@@ -8,6 +8,8 @@ import {
   Marker
 } from "react-google-maps";
 
+// import HeatmapLayer from "react-google-maps/lib/components/visualization/HeatmapLayer";
+
 const {
   MarkerClusterer
 } = require("react-google-maps/lib/components/addons/MarkerClusterer");
@@ -21,6 +23,7 @@ const Map = withScriptjs(
         lng: props.startLoc.lng
       }}
       onClick={props.handleClickedMap}
+      heatmapLibrary
     >
       <MarkerClusterer averageCenter enableRetinaIcons gridSize={15}>
         {props.isMarkerShown &&

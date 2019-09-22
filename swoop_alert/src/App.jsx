@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 
-import Header from "./components/Header";
 import Map from "./components/Map";
 import MarkerForm from "./components/MarkerForm";
 
 // import useMarkerForm from "./hooks/useMarkerForm";
 
 import apis from "./api";
+
+// Styled comps
+import { AppWrapper, Button, Header } from "./styles/App";
 
 function App() {
   // const { inputs, handleInputChange, handleSubmit } = useMarkerForm();
@@ -68,8 +70,8 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <Header />
+    <AppWrapper>
+      <Header>Swoop Alert</Header>
       <Map
         handleClickedMap={handleClickedMap}
         isMarkerShown
@@ -80,11 +82,12 @@ function App() {
         markers={markers}
         startLoc={startLoc}
       />
-      <button type="button" onClick={handleClickedHeatMap}>
+      {/* <Button type="button" onClick={handleClickedHeatMap}>
         Heat Map
-      </button>
+      </Button>
+  */}
       <MarkerForm newMarker={newMarker} />
-    </div>
+    </AppWrapper>
   );
 }
 
