@@ -12,11 +12,14 @@ This project was set up and made to allow people to record locations of bird att
 - [x] Connect front end to back end to use calls
 - [ ] Map
   - [x] Marker clusters
+  - [ ] Map should adjust size on window res change
+  - [ ] Refresh on submit?
   - [ ] Heat map
-  - [ ] Display note for marker
+  - [ ] Display note for marker, if Bird drew blood, give weight 1
   - [ ] Custom marker theme for a bird
   - [ ] Search option for people to enter in address to go to location
 - [ ] CSS Theme
+  - [ ] Dark Theme
 - [ ] Feed: Display feed with notes and locaton data
 - [ ] Option to search your area to find bird attacks near you
 - [ ] Example site hosted on netlfiy

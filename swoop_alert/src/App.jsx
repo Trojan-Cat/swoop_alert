@@ -58,16 +58,20 @@ function App() {
     const marker = { latitude, longtitude };
     setNewMarker(marker);
 
+    // setMarker(markers => [...markers, marker]);
+
     setStartLoc({ latitude, longtitude });
     // TODO:  Display a marker for the new marker before it has been submitted
     // TODO: When it sets a new startLoc for the first time it goes back to the intial value set, after first click it is fine
   };
 
+  /*
   const handleClickedHeatMap = () => {
     setToggleHeat(!toggleHeat);
     console.log(toggleHeat);
     // const heatmap = markers.map();
   };
+*/
 
   return (
     <AppWrapper>
@@ -81,6 +85,7 @@ function App() {
         mapElement={<div style={{ height: `100%` }} />}
         markers={markers}
         startLoc={startLoc}
+        newMarker={newMarker}
       />
       {/* <Button type="button" onClick={handleClickedHeatMap}>
         Heat Map

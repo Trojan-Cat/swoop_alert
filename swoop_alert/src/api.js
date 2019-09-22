@@ -17,3 +17,5 @@ const apis = {
 export default apis;
 
 // TODO: Add other consts for markers if needed?
+// http://52.64.156.148/
+// baseURL: "http://localhost:3000/api"

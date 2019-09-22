@@ -36,6 +36,12 @@ const Map = withScriptjs(
             />
           ))}
       </MarkerClusterer>
+      <Marker
+        position={{
+          lat: props.newMarker.latitude,
+          lng: props.newMarker.longtitude
+        }}
+      />
     </GoogleMap>
   ))
 );
