@@ -6,7 +6,7 @@ const db = require("./DB");
 const markerRouter = require("./routes/marker-router");
 
 const app = express();
-const apiPort = 3000;
+const apiPort = 3001;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
